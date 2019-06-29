@@ -23,6 +23,9 @@ alias code 'open -a "Visual Studio Code"'
 alias storm 'open -a "PhpStorm"'
 alias charm 'open -a "PyCharm CE"'
 alias memo 'open -a textedit'
+alias askd 'ask dialog -l ja-JP'
+alias askl 'ask deploy -t lambda'
+alias gs 'git status'
 
 # peco/z
 function peco_z
