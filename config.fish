@@ -26,6 +26,9 @@ alias memo 'open -a textedit'
 alias askd 'ask dialog -l ja-JP'
 alias askl 'ask deploy -t lambda'
 alias gs 'git status'
+alias gd 'git diff'
+alias gl 'git log'
+alias gb 'git branch'
 
 # peco/z
 function peco_z
