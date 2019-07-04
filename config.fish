@@ -29,6 +29,8 @@ alias gs 'git status'
 alias gd 'git diff'
 alias gl 'git log'
 alias gb 'git branch'
+alias tn 'tmux new'
+alias tnm 'tmux new -s main'
 
 # peco/z
 function peco_z
