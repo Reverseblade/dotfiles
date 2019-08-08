@@ -18,6 +18,7 @@ alias cdp 'cd ~/Code/Projects'
 alias cdc 'cd ~/Code/others/commands'
 
 alias clera 'clear'
+alias cl 'clear'
 
 alias code 'open -a "Visual Studio Code"'
 alias storm 'open -a "PhpStorm"'
