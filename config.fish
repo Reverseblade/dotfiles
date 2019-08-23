@@ -30,7 +30,7 @@ alias gs 'git status'
 alias gd 'git diff'
 alias gl 'git log'
 alias gb 'git branch'
-alias gs 'gis status'
+alias gs 'git status'
 alias tn 'tmux new -s'
 alias tnm 'tmux new -s main'
 
