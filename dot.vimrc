@@ -27,7 +27,7 @@ set autoindent
 set backspace=2
 set expandtab
 set hlsearch
-set mouse=a
+" set mouse=a
 set noswapfile
 set nu rnu
 set number relativenumber
