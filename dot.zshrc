@@ -17,7 +17,7 @@ autoload -Uz promptinit
 promptinit
 prompt  powerlevel9k
 
-POWERLEVEL9K_RPROMPT_ON_NEWLINE
+POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 
