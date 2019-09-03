@@ -22,22 +22,24 @@ NeoBundleCheck
 
 " settings
 syntax on
+
 set autoindent
 set backspace=2
 set expandtab
+set hlsearch
 set mouse=a
-set number
+set noswapfile
+set nu rnu
+set number relativenumber
 set shiftwidth=4
 set tabstop=4
-set noswapfile
-set hlsearch
-
 " settings for vim-powerline
 set laststatus=2
 
 " keymap
 let mapleader = ','
 noremap write :w<CR>
+noremap wr :w<CR>
 noremap wq :wq<CR>
 noremap w! :w!<CR>
 noremap qq :q<CR>
@@ -45,6 +47,8 @@ noremap q! :q!<CR>
 noremap <S-d> :%s//
 noremap <leader>t :tab new<CR>
 noremap nt :NERDTreeToggle<CR>
+nnoremap j jzz
+nnoremap k kzz
 inoremap jh <esc>
 vnoremap jh <esc>
 vnoremap <leader>s :sort<CR>
