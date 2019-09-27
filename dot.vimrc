@@ -13,6 +13,7 @@ NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Lokaltog/vim-powerline.git'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'takac/vim-hardtime'
 
 call neobundle#end()
 
@@ -62,3 +63,6 @@ let g:jedi#rename_command = "[jedi]r"
 let g:jedi#usages_command = "[jedi]n"
 let g:jedi#popup_select_first = 0
 let g:jedi#popup_on_dot = 0
+
+" ctrlp
+let g:ctrlp_show_hidden = 1

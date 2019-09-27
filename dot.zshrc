@@ -18,7 +18,6 @@ promptinit
 prompt  powerlevel9k
 
 POWERLEVEL9K_RPROMPT_ON_NEWLINE=true
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
 POWERLEVEL9K_MODE='nerdfont-complete'
 
 #POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR=$''
@@ -55,8 +54,34 @@ POWERLEVEL9K_VCS_CLEAN_FOREGROUND='black'
 user_with_skull() {
  echo -n "\ufc72 $(whoami)"
 }
-POWERLEVEL9K_CUSTOM_USER="user_with_skull"
+# POWERLEVEL9K_CUSTOM_USER="user_with_skull"
 
 # Prompt elements
-# POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(custom_user dir vcs)
-# POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs battery)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+
+# peco
+function peco-history-selection() {
+        BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
+        CURSOR=$#BUFFER
+    zle reset-prompt
+}
+
+zle -N peco-history-selection
+bindkey '^R' peco-history-selection
+
+# alias
+alias cdd='cd ~/Desktop'
+alias clera='clear'
+alias cl='clear'
+alias code='open -a "Visual Studio Code"'
+alias storm='open -a "PhpStorm"'
+alias charm='open -a "PyCharm CE"'
+alias memo='open -a textedit'
+alias askd='ask dialog -l ja-JP'
+alias askl='ask deploy -t lambda'
+alias gs='git status'
+alias gd='git diff'
+alias gl='git log'
+alias gb='git branch'
+alias gs='git status'
