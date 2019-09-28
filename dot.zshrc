@@ -74,6 +74,7 @@ bindkey '^R' peco-history-selection
 alias cdd='cd ~/Desktop'
 alias clera='clear'
 alias cl='clear'
+
 alias code='open -a "Visual Studio Code"'
 alias storm='open -a "PhpStorm"'
 alias charm='open -a "PyCharm CE"'
@@ -85,3 +86,10 @@ alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gs='git status'
+
+# fzf
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+export FZF_DEFAULT_OPTS="--height 70% --ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
+# export FZF_DEFAULT_COMMAND='rg --files'
+# export FZF_CTRL_T_COMMAND='$FZF_DEFAULT_COMMAND'

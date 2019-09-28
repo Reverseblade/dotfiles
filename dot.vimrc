@@ -66,3 +66,6 @@ let g:jedi#popup_on_dot = 0
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
+
+" fzf
+" set rtp+=/usr/local/opt/fzf
