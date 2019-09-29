@@ -69,3 +69,6 @@ let g:ctrlp_show_hidden = 1
 
 " fzf
 " set rtp+=/usr/local/opt/fzf
+
+" nerdtree
+let NERDTreeShowHidden=1
