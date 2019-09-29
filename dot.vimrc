@@ -55,15 +55,15 @@ vnoremap jh <esc>
 vnoremap <leader>s :sort<CR>
 
 " make vim look like a badass python ide
-let g:jedi#completions_command = "<C-j>"
-let g:jedi#goto_assignments_command = "<C-g>"
-let g:jedi#goto_definitions_command = "<C-d>"
-let g:jedi#documentation_command = "<C-k>"
-let g:jedi#rename_command = "[jedi]r"
-let g:jedi#usages_command = "[jedi]n"
-let g:jedi#popup_select_first = 0
-let g:jedi#popup_on_dot = 0
-
+" let g:jedi#completions_command = "<C-j>"
+" let g:jedi#goto_assignments_command = "<C-g>"
+" let g:jedi#goto_definitions_command = "<C-d>"
+" let g:jedi#documentation_command = "<C-k>"
+" let g:jedi#rename_command = "[jedi]r"
+" let g:jedi#usages_command = "[jedi]n"
+" let g:jedi#popup_select_first = 0
+" let g:jedi#popup_on_dot = 0
+" 
 " ctrlp
 let g:ctrlp_show_hidden = 1
 
