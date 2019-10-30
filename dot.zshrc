@@ -58,7 +58,7 @@ user_with_skull() {
 
 # Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
 
 # peco
 function peco-history-selection() {
