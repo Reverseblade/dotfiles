@@ -39,12 +39,14 @@ set laststatus=2
 
 " keymap
 let mapleader = ','
-inoremap jh <esc>
-nnoremap nO O<Esc>
-nnoremap no o<Esc>
+inoremap jh <Esc>
 nnoremap j jzz
 nnoremap k kzz
+nnoremap nO O<Esc>
+nnoremap no o<Esc>
 noremap <S-d> :%s//
+noremap <S-h>   ^
+noremap <S-l>   $
 noremap <leader>t :tab new<CR>
 noremap nt :NERDTreeToggle<CR>
 noremap q! :q!<CR>
