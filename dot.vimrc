@@ -56,9 +56,9 @@ noremap wq :wq<CR>
 noremap wr :w<CR>
 noremap write :w<CR>
 vnoremap <leader>s :sort<CR>
-vnoremap jh <esc>
+vnoremap jh <Esc>
 
-" make vim look like a badass python ide
+" make vim act like a badass python ide
 " let g:jedi#completions_command = "<C-j>"
 " let g:jedi#goto_assignments_command = "<C-g>"
 " let g:jedi#goto_definitions_command = "<C-d>"
