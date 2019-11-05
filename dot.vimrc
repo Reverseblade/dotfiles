@@ -39,20 +39,22 @@ set laststatus=2
 
 " keymap
 let mapleader = ','
-noremap write :w<CR>
-noremap wr :w<CR>
-noremap wq :wq<CR>
-noremap w! :w!<CR>
-noremap qq :q<CR>
-noremap q! :q!<CR>
+inoremap jh <esc>
+nnoremap <Leader>nO O<Esc>
+nnoremap <Leader>no o<Esc>
+nnoremap j jzz
+nnoremap k kzz
 noremap <S-d> :%s//
 noremap <leader>t :tab new<CR>
 noremap nt :NERDTreeToggle<CR>
-nnoremap j jzz
-nnoremap k kzz
-inoremap jh <esc>
-vnoremap jh <esc>
+noremap q! :q!<CR>
+noremap qq :q<CR>
+noremap w! :w!<CR>
+noremap wq :wq<CR>
+noremap wr :w<CR>
+noremap write :w<CR>
 vnoremap <leader>s :sort<CR>
+vnoremap jh <esc>
 
 " make vim look like a badass python ide
 " let g:jedi#completions_command = "<C-j>"
