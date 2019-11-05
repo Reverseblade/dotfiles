@@ -40,8 +40,8 @@ set laststatus=2
 " keymap
 let mapleader = ','
 inoremap jh <esc>
-nnoremap <Leader>nO O<Esc>
-nnoremap <Leader>no o<Esc>
+nnoremap nO O<Esc>
+nnoremap no o<Esc>
 nnoremap j jzz
 nnoremap k kzz
 noremap <S-d> :%s//
