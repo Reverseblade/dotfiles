@@ -59,11 +59,7 @@ user_with_skull() {
 
 # Prompt elements
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir vcs virtualenv)
-<<<<<<< Updated upstream
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=()
-=======
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(background_jobs)
->>>>>>> Stashed changes
 
 # peco
 function peco-history-selection() {
