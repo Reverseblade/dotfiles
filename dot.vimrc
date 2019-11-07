@@ -15,6 +15,7 @@ NeoBundle 'Lokaltog/vim-powerline.git'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'takac/vim-hardtime'
 
+
 call neobundle#end()
 
 filetype plugin indent on
@@ -40,6 +41,7 @@ set laststatus=2
 " keymap
 let mapleader = ','
 inoremap jh <Esc>
+inoremap nu <Esc>u
 nnoremap j jzz
 nnoremap k kzz
 nnoremap nO O<Esc>
