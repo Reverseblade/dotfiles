@@ -3,18 +3,18 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'editorconfig/editorconfig-vim'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'Lokaltog/vim-powerline.git'
+NeoBundle 'Shougo/neosnippet-snippets'
+NeoBundle 'Shougo/neosnippet.vim'
+NeoBundle 'Shougo/unite.vim'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'editorconfig/editorconfig-vim'
+NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
-
+NeoBundle 'ujihisa/unite-colorscheme'
 
 call neobundle#end()
 
@@ -24,6 +24,9 @@ NeoBundleCheck
 
 " settings
 syntax on
+" colorscheme onehalfdark
+
+hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
 set autoindent
 set backspace=2
