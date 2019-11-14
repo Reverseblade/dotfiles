@@ -3,10 +3,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Lokaltog/vim-powerline.git'
-NeoBundle 'Shougo/neosnippet-snippets'
-NeoBundle 'Shougo/neosnippet.vim'
-NeoBundle 'Shougo/unite.vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'editorconfig/editorconfig-vim'
 NeoBundle 'itchyny/lightline.vim'
@@ -15,6 +11,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+NeoBundle 'junegunn/fzf.vim'
 
 call neobundle#end()
 
@@ -45,39 +43,41 @@ set laststatus=2
 let mapleader = ','
 inoremap jh <Esc>
 inoremap nu <Esc>u
+nnoremap <leader>q :q<CR>
+nnoremap <leader>w :w<CR>
 nnoremap j jzz
 nnoremap k kzz
 nnoremap nO O<Esc>
 nnoremap no o<Esc>
-noremap <S-d> :%s//
+nnoremap q! :q!<CR>
+nnoremap w! :w!<CR>
+nnoremap wq :wq<CR>
+nnoremap wq! :wq!<CR>
+noremap <S-d> :%s/
 noremap <S-h>   ^
 noremap <S-l>   $
 noremap <leader>t :tab new<CR>
 noremap nt :NERDTreeToggle<CR>
-noremap q! :q!<CR>
-noremap qq :q<CR>
-noremap w! :w!<CR>
-noremap wq :wq<CR>
-noremap wr :w<CR>
-noremap write :w<CR>
 vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
 
 " make vim act like a badass python ide
+let g:jedi#auto_initialization = 0
+let g:jedi#auto_vim_configuration = 0
+let g:jedi#popup_on_dot = 1
+let g:jedi#popup_select_first = 0
 " let g:jedi#completions_command = "<C-j>"
 " let g:jedi#goto_assignments_command = "<C-g>"
 " let g:jedi#goto_definitions_command = "<C-d>"
 " let g:jedi#documentation_command = "<C-k>"
 " let g:jedi#rename_command = "[jedi]r"
 " let g:jedi#usages_command = "[jedi]n"
-" let g:jedi#popup_select_first = 0
-" let g:jedi#popup_on_dot = 0
-" 
+
 " ctrlp
 let g:ctrlp_show_hidden = 1
 
 " fzf
-" set rtp+=/usr/local/opt/fzf
+set rtp+=/usr/local/opt/fzf
 
 " nerdtree
 let NERDTreeShowHidden=1
