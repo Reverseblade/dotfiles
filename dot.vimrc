@@ -22,20 +22,18 @@ NeoBundleCheck
 
 " settings
 syntax on
-" colorscheme onehalfdark
-
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
 set autoindent
 set backspace=2
 set expandtab
 set hlsearch
-" set mouse=a
 set noswapfile
-set nu rnu
 set number relativenumber
 set shiftwidth=4
 set tabstop=4
+" set mouse=a
+
 " settings for vim-powerline
 set laststatus=2
 
