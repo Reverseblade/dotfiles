@@ -45,7 +45,7 @@ set laststatus=2
 let mapleader = ','
 inoremap jh <Esc>
 inoremap nu <Esc>u
-nnoremap <leader>f :Files<CR>
+noremap <leader>f :Files<CR>
 nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
@@ -79,7 +79,9 @@ let g:jedi#documentation_command = "<C-k>"
 " let g:jedi#popup_on_dot = 0
 " let g:jedi#popup_select_first = 0
 " let g:jedi#rename_command = "[jedi]r"
+
 " let g:jedi#usages_command = "[jedi]n"
+
 autocmd FileType python setlocal completeopt-=preview
 
 " ctrlp
