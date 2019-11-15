@@ -53,6 +53,8 @@ nnoremap j jzz
 nnoremap k kzz
 nnoremap nO O<Esc>
 nnoremap no o<Esc>
+nnoremap na a <Esc>
+nnoremap nA A <Esc>
 nnoremap q! :q!<CR>
 nnoremap w! :w!<CR>
 nnoremap wh :vertical resize +5<CR>
