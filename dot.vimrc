@@ -50,8 +50,8 @@ inoremap nu <Esc>u
 nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
-nnoremap j jzz
-nnoremap k kzz
+" nnoremap j jzz
+" nnoremap k kzz
 nnoremap nA A <Esc>
 nnoremap nO O<Esc>
 nnoremap na a <Esc>
