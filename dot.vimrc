@@ -13,6 +13,7 @@ NeoBundle 'junegunn/fzf.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'rhysd/vim-syntax-christmas-tree'
+NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
