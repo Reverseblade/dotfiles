@@ -46,6 +46,7 @@ let mapleader = ','
 inoremap jh <Esc>
 inoremap nu <Esc>u
 nnoremap <leader>f :Files<CR>
+nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap j jzz
