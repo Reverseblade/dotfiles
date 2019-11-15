@@ -65,14 +65,14 @@ vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
 
 " jedi-vim 
-" let g:jedi#auto_initialization = 0
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#popup_select_first = 0
 let g:jedi#completions_command = "<C-j>"
 let g:jedi#goto_assignments_command = "<C-g>"
 let g:jedi#goto_definitions_command = "<C-d>"
 let g:jedi#documentation_command = "<C-k>"
+" let g:jedi#auto_initialization = 0
+" let g:jedi#auto_vim_configuration = 0
+" let g:jedi#popup_on_dot = 0
+" let g:jedi#popup_select_first = 0
 " let g:jedi#rename_command = "[jedi]r"
 " let g:jedi#usages_command = "[jedi]n"
 autocmd FileType python setlocal completeopt-=preview
@@ -90,3 +90,8 @@ let NERDTreeShowHidden=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" local settings
+if filereadable(expand('~/.vimrc.local'))
+  source ~/.vimrc.local
+endif
