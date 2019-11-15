@@ -96,3 +96,5 @@ let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
+
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
