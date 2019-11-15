@@ -46,7 +46,6 @@ set laststatus=2
 let mapleader = ','
 inoremap jh <Esc>
 inoremap nu <Esc>u
-noremap <leader>f :Files<CR>
 nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
@@ -65,7 +64,10 @@ nnoremap wq! :wq!<CR>
 noremap <S-d> :%s/
 noremap <S-h>   ^
 noremap <S-l>   $
+noremap <leader>f :Files<CR>
 noremap <leader>t :tab new<CR>
+noremap fj 5j
+noremap fk 5k
 noremap nt :NERDTreeToggle<CR>
 vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
