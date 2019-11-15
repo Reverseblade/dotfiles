@@ -55,6 +55,10 @@ nnoremap nO O<Esc>
 nnoremap no o<Esc>
 nnoremap q! :q!<CR>
 nnoremap w! :w!<CR>
+nnoremap wh :vertical resize +5<CR>
+nnoremap wj :res +5<CR>
+nnoremap wk :res -5<CR>
+nnoremap wl :vertical resize -5<CR>
 nnoremap wq :wq<CR>
 nnoremap wq! :wq!<CR>
 noremap <S-d> :%s/
