@@ -10,12 +10,13 @@ NeoBundle 'honza/vim-snippets'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
+NeoBundle 'kana/vim-submode'
 NeoBundle 'kien/ctrlp.vim'
+NeoBundle 'rhysd/vim-syntax-christmas-tree'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'rhysd/vim-syntax-christmas-tree'
 
 call neobundle#end()
 
@@ -27,20 +28,20 @@ NeoBundleCheck
 syntax on
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
+" set mouse=a
 set autoindent
 set backspace=2
 set expandtab
 set history=700
 set hlsearch
+set laststatus=2
 set noswapfile
 set number relativenumber
 set shiftwidth=4
+set splitbelow
+set t_Co=256
 set tabstop=4
 set undolevels=700
-" set mouse=a
-
-" settings for vim-powerline
-set laststatus=2
 
 " keymap
 let mapleader = ','
@@ -51,21 +52,23 @@ nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
 nnoremap j jzz
 nnoremap k kzz
-nnoremap nO O<Esc>
-nnoremap no o<Esc>
-nnoremap na a <Esc>
 nnoremap nA A <Esc>
+nnoremap nO O<Esc>
+nnoremap na a <Esc>
+nnoremap no o<Esc>
 nnoremap q! :q!<CR>
 nnoremap w! :w!<CR>
-nnoremap wh :vertical resize +5<CR>
-nnoremap wj :res +5<CR>
-nnoremap wk :res -5<CR>
-nnoremap wl :vertical resize -5<CR>
+nnoremap wh <C-w>h
+nnoremap wj <C-w>h
+nnoremap wk <C-w>k
+nnoremap wl <C-w>l
+nnoremap sh :split<CR>
+nnoremap sv :vsplit<CR>
 nnoremap wq :wq<CR>
 nnoremap wq! :wq!<CR>
-noremap <S-d> :%s/
 noremap <S-h>   ^
 noremap <S-l>   $
+noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
 noremap <leader>t :tab new<CR>
 noremap fj 5j
@@ -86,7 +89,6 @@ let g:jedi#documentation_command = "<C-k>"
 " let g:jedi#rename_command = "[jedi]r"
 
 " let g:jedi#usages_command = "[jedi]n"
-
 autocmd FileType python setlocal completeopt-=preview
 
 " ctrlp
@@ -102,6 +104,16 @@ let NERDTreeShowHidden=1
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" vim-submode
+call submode#enter_with('win-resize', 'n', '', 'w>', '<C-w>>')
+call submode#enter_with('win-resize', 'n', '', 'w<', '<C-w><')
+call submode#enter_with('win-resize', 'n', '', 'w+', '<C-w>+')
+call submode#enter_with('win-resize', 'n', '', 'w-', '<C-w>-')
+call submode#map('win-resize', 'n', '', '>', '<C-w>>')
+call submode#map('win-resize', 'n', '', '<', '<C-w><')
+call submode#map('win-resize', 'n', '', '+', '<C-w>+')
+call submode#map('win-resize', 'n', '', '-', '<C-w>-')
 
 " local settings
 if filereadable(expand('~/.vimrc.local'))
