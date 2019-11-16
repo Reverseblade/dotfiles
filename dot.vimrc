@@ -55,6 +55,7 @@ inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 inoremap ( ()<LEFT>
 inoremap [ []<LEFT>
+inoremap < <><LEFT>
 inoremap jh <Esc>
 inoremap nu <Esc>u
 inoremap { {}<LEFT>
