@@ -67,6 +67,7 @@ nnoremap wk <C-w>k
 nnoremap wl <C-w>l
 nnoremap <leader>b <C-b>
 nnoremap sh :split<CR>
+
 nnoremap sv :vsplit<CR>
 nnoremap wq :wq<CR>
 nnoremap wq! :wq!<CR>
@@ -74,6 +75,8 @@ noremap <S-h>   ^
 noremap <S-l>   $
 noremap <S-s> :s/
 noremap <leader>f :Files<CR>
+noremap <leader>fc :Files ~/Code<CR>
+noremap <leader>fd :Files ~/dotfiles<CR>
 noremap <leader>t :tab new<CR>
 noremap fj 5j
 noremap fk 5k
