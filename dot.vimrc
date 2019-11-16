@@ -4,6 +4,7 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'Reverseblade/vim-line-control'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -48,27 +49,31 @@ set undolevels=700
 
 " keymap
 let mapleader = ','
+" nnoremap j jzz
+" nnoremap k kzz
+inoremap " ""<LEFT>
+inoremap ' ''<LEFT>
+inoremap ( ()<LEFT>
+inoremap [ []<LEFT>
 inoremap jh <Esc>
 inoremap nu <Esc>u
+inoremap { {}<LEFT>
+nnoremap <leader>b <C-b>
 nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap <leader>q :q<CR>
 nnoremap <leader>w :w<CR>
-" nnoremap j jzz
-" nnoremap k kzz
 nnoremap nA A <Esc>
 nnoremap nO O<Esc>
 nnoremap na a <Esc>
 nnoremap no o<Esc>
 nnoremap q! :q!<CR>
+nnoremap sh :split<CR>
+nnoremap sv :vsplit<CR>
 nnoremap w! :w!<CR>
 nnoremap wh <C-w>h
 nnoremap wj <C-w>h
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
-nnoremap <leader>b <C-b>
-nnoremap sh :split<CR>
-
-nnoremap sv :vsplit<CR>
 nnoremap wq :wq<CR>
 nnoremap wq! :wq!<CR>
 noremap <S-h>   ^
@@ -126,6 +131,11 @@ call submode#enter_with('normal-move', 'i', '', '<C-o>h', '<C-o>h')
 call submode#enter_with('normal-move', 'i', '', '<C-o>l', '<C-o>l')
 call submode#map('normal-move', 'i', '', 'h', '<C-o>h')
 call submode#map('normal-move', 'i', '', 'l', '<C-o>l')
+
+call submode#enter_with('line-move', 'n', '', '<C-l>j', ':call MoveLineDown()<CR>')
+call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>')
+call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
+call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
 
 " local settings
 if filereadable(expand('~/.vimrc.local'))
