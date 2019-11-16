@@ -1,4 +1,5 @@
 set runtimepath+=~/.vim/bundle/neobundle.vim/
+
 call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
@@ -18,6 +19,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
+"NeoBundle 'blueyed/vim-diminactive'
 
 call neobundle#end()
 
@@ -63,13 +65,14 @@ nnoremap wh <C-w>h
 nnoremap wj <C-w>h
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
+nnoremap <leader>b <C-b>
 nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
 nnoremap wq :wq<CR>
 nnoremap wq! :wq!<CR>
 noremap <S-h>   ^
 noremap <S-l>   $
-noremap <S-s> :%s/
+noremap <S-s> :s/
 noremap <leader>f :Files<CR>
 noremap <leader>t :tab new<CR>
 noremap fj 5j
@@ -115,6 +118,11 @@ call submode#map('win-resize', 'n', '', '>', '<C-w>>')
 call submode#map('win-resize', 'n', '', '<', '<C-w><')
 call submode#map('win-resize', 'n', '', '+', '<C-w>+')
 call submode#map('win-resize', 'n', '', '-', '<C-w>-')
+
+call submode#enter_with('normal-move', 'i', '', '<C-o>h', '<C-o>h')
+call submode#enter_with('normal-move', 'i', '', '<C-o>l', '<C-o>l')
+call submode#map('normal-move', 'i', '', 'h', '<C-o>h')
+call submode#map('normal-move', 'i', '', 'l', '<C-o>l')
 
 " local settings
 if filereadable(expand('~/.vimrc.local'))
