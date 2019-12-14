@@ -147,6 +147,8 @@ autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,exc
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 
 " cursor settings
-:autocmd InsertEnter * set cul
-:autocmd InsertLeave * set nocul
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
 hi CursorLine cterm=NONE ctermbg=black 
+let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
+let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
