@@ -49,8 +49,6 @@ set undolevels=700
 
 " keymap
 let mapleader = ','
-" nnoremap j jzz
-" nnoremap k kzz
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 inoremap ( ()<LEFT>
@@ -93,7 +91,7 @@ vnoremap jh <Esc>
 " jedi-vim 
 let g:jedi#completions_command = "<C-j>"
 let g:jedi#goto_assignments_command = "<C-g>"
-let g:jedi#goto_definitions_command = "<C-d>"
+let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "<C-k>"
 " let g:jedi#auto_initialization = 0
 " let g:jedi#auto_vim_configuration = 0
