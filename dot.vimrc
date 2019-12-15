@@ -37,7 +37,7 @@ set autoindent
 set backspace=2
 set expandtab
 set history=700
-set hlsearch
+" set hlsearch
 set laststatus=2
 set noswapfile
 set number relativenumber
@@ -145,6 +145,12 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
+"function FindForwardNextClass()
+    "exec "/^class<CR>"
+    "normal zt
+"endfunction
+"autocmd FileType python nnoremap ]] call FindForwardNextClass() 
+"autocmd FileType python nnoremap [[ ?^class<CR>
 
 " cursor settings
 autocmd InsertEnter * set cul
