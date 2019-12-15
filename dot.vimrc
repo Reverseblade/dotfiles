@@ -145,12 +145,8 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
 autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
-"function FindForwardNextClass()
-    "exec "/^class<CR>"
-    "normal zt
-"endfunction
-"autocmd FileType python nnoremap ]] call FindForwardNextClass() 
-"autocmd FileType python nnoremap [[ ?^class<CR>
+autocmd FileType python nmap <leader>c ]]zt 
+autocmd FileType python nmap <leader>C [[zt
 
 " cursor settings
 autocmd InsertEnter * set cul
