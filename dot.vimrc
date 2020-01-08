@@ -46,14 +46,15 @@ set splitbelow
 set t_Co=256
 set tabstop=4
 set undolevels=700
+set clipboard=unnamed,autoselect
 
 " keymap
 let mapleader = ','
 inoremap " ""<LEFT>
 inoremap ' ''<LEFT>
 inoremap ( ()<LEFT>
-inoremap [ []<LEFT>
 inoremap < <><LEFT>
+inoremap [ []<LEFT>
 inoremap jh <Esc>
 inoremap nu <Esc>u
 inoremap { {}<LEFT>
@@ -85,6 +86,10 @@ noremap <leader>t :tab new<CR>
 noremap fj 5j
 noremap fk 5k
 noremap nt :NERDTreeToggle<CR>
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
 
