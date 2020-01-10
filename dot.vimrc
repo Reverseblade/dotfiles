@@ -20,6 +20,7 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
+NeoBundle 'mattn/emmet-vim',
 "NeoBundle 'blueyed/vim-diminactive'
 
 call neobundle#end()
