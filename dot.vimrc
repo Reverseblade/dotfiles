@@ -21,13 +21,6 @@ NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'mattn/emmet-vim'
-"NeoBundle 'prabirshrestha/vim-lsp',
-"NeoBundle 'prabirshrestha/async.vim',
-"NeoBundle 'mattn/vim-lsp-settings',
-"NeoBundle 'b4b4r07/vim-sqlfmt',
-"NeoBundle 'jackc/sqlfmt',
-"NeoBundle 'andialbrecht/sqlparse',
-"NeoBundle 'blueyed/vim-diminactive'
 NeoBundle 'vim-scripts/SQLUtilities'
 NeoBundle 'vim-scripts/Align'
 
@@ -35,35 +28,21 @@ call neobundle#end()
 
 filetype plugin indent on
 
-vmap <silent>sf        <Plug>SQLU_Formatter<CR>
-nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
-nmap <silent>scd       <Plug>SQLU_GetColumnDef<CR>
-nmap <silent>scdt      <Plug>SQLU_GetColumnDataType<CR>
-nmap <silent>scp       <Plug>SQLU_CreateProcedure<CR>
-
-let g:sqlfmt_command = "sqlfmt"
-let g:sqlfmt_options = ""
-
-let g:sqlfmt_command = "sqlformat"
-let g:sqlfmt_options = "-r -k upper"
-
-let g:sqlutil_non_line_break_keywords = ['insert']
-
-
-
 NeoBundleCheck
 
-" settings
+
+" basic settings
 syntax on
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
-set mouse=a
 set autoindent
 set backspace=2
+set clipboard=unnamed,autoselect
 set expandtab
 set history=700
 set hlsearch
 set laststatus=2
+set mouse=a
 set noswapfile
 set number relativenumber
 set shiftwidth=4
@@ -71,7 +50,7 @@ set splitbelow
 set t_Co=256
 set tabstop=4
 set undolevels=700
-set clipboard=unnamed,autoselect
+
 
 " keymap
 let mapleader = ','
@@ -118,34 +97,34 @@ tnoremap <C-w>l <C-\><C-n><C-w>l
 vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
 
+
 " jedi-vim 
 let g:jedi#completions_command = "<C-j>"
 let g:jedi#goto_assignments_command = "<C-g>"
 let g:jedi#goto_definitions_command = "<leader>d"
 let g:jedi#documentation_command = "<C-k>"
-" let g:jedi#auto_initialization = 0
-" let g:jedi#auto_vim_configuration = 0
-" let g:jedi#popup_on_dot = 0
-" let g:jedi#popup_select_first = 0
-" let g:jedi#rename_command = "[jedi]r"
 
-" let g:jedi#usages_command = "[jedi]n"
 autocmd FileType python setlocal completeopt-=preview
+
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 
+
 " fzf
 set rtp+=/usr/local/opt/fzf
 
+
 " nerdtree
 let NERDTreeShowHidden=1
+
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
 
 " vim-submode
 call submode#enter_with('win-resize', 'n', '', 'w>', '<C-w>>')
@@ -167,11 +146,30 @@ call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>'
 call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
 
+
+" SQLUtilities 
+vmap <silent>sf        <Plug>SQLU_Formatter<CR>
+nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
+nmap <silent>scd       <Plug>SQLU_GetColumnDef<CR>
+nmap <silent>scdt      <Plug>SQLU_GetColumnDataType<CR>
+nmap <silent>scp       <Plug>SQLU_CreateProcedure<CR>
+
+let g:sqlfmt_command = "sqlfmt"
+let g:sqlfmt_options = ""
+
+let g:sqlfmt_command = "sqlformat"
+let g:sqlfmt_options = "-r -k upper"
+
+let g:sqlutil_non_line_break_keywords = ['insert']
+
+
 " local settings
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
 
+
+"auto commands
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 autocmd FileType python setl autoindent
 autocmd FileType python setl smartindent cinwords=if,elif,else,for,while,try,except,finally,def,class
@@ -179,12 +177,14 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python nmap <leader>c ]]zt 
 autocmd FileType python nmap <leader>C [[zt
 
+
 " cursor settings
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 hi CursorLine cterm=NONE ctermbg=black 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
 
 " vim-lsp settings 
 if executable('pyls')
