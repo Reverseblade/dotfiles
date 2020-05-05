@@ -14,18 +14,42 @@ NeoBundle 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 NeoBundle 'junegunn/fzf.vim'
 NeoBundle 'kana/vim-submode'
 NeoBundle 'kien/ctrlp.vim'
-NeoBundle 'rhysd/vim-syntax-christmas-tree'
+"NeoBundle 'rhysd/vim-syntax-christmas-tree'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'sonph/onehalf', {'rtp': 'vim/'}
 NeoBundle 'takac/vim-hardtime'
 NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'mattn/emmet-vim',
+NeoBundle 'mattn/emmet-vim'
+"NeoBundle 'prabirshrestha/vim-lsp',
+"NeoBundle 'prabirshrestha/async.vim',
+"NeoBundle 'mattn/vim-lsp-settings',
+"NeoBundle 'b4b4r07/vim-sqlfmt',
+"NeoBundle 'jackc/sqlfmt',
+"NeoBundle 'andialbrecht/sqlparse',
 "NeoBundle 'blueyed/vim-diminactive'
+NeoBundle 'vim-scripts/SQLUtilities'
+NeoBundle 'vim-scripts/Align'
 
 call neobundle#end()
 
 filetype plugin indent on
+
+vmap <silent>sf        <Plug>SQLU_Formatter<CR>
+nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
+nmap <silent>scd       <Plug>SQLU_GetColumnDef<CR>
+nmap <silent>scdt      <Plug>SQLU_GetColumnDataType<CR>
+nmap <silent>scp       <Plug>SQLU_CreateProcedure<CR>
+
+let g:sqlfmt_command = "sqlfmt"
+let g:sqlfmt_options = ""
+
+let g:sqlfmt_command = "sqlformat"
+let g:sqlfmt_options = "-r -k upper"
+
+let g:sqlutil_non_line_break_keywords = ['insert']
+
+
 
 NeoBundleCheck
 
@@ -33,12 +57,12 @@ NeoBundleCheck
 syntax on
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
-" set mouse=a
+set mouse=a
 set autoindent
 set backspace=2
 set expandtab
 set history=700
-" set hlsearch
+set hlsearch
 set laststatus=2
 set noswapfile
 set number relativenumber
@@ -110,6 +134,7 @@ autocmd FileType python setlocal completeopt-=preview
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'ra'
 
 " fzf
 set rtp+=/usr/local/opt/fzf
@@ -160,3 +185,27 @@ autocmd InsertLeave * set nocul
 hi CursorLine cterm=NONE ctermbg=black 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" vim-lsp settings 
+if executable('pyls')
+    " pip install python-language-server
+    au User lsp_setup call lsp#register_server({
+        \ 'name': 'pyls',
+        \ 'cmd': {server_info->['pyls']},
+        \ 'whitelist': ['python'],
+        \ })
+endif
+
+function! s:on_lsp_buffer_enabled() abort
+    setlocal omnifunc=lsp#complete
+    setlocal signcolumn=yes
+    nmap <buffer> gd <plug>(lsp-definition)
+    nmap <buffer> <f2> <plug>(lsp-rename)
+    " refer to doc to add more commands
+endfunction
+
+augroup lsp_install
+    au!
+    " call s:on_lsp_buffer_enabled only for languages that has the server registered.
+    autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
+augroup END
