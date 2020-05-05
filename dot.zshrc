@@ -101,5 +101,6 @@ eval "$(pyenv init -)"
 # custom functions
 ide() {
     tmux split-window -v -p 20
+    tmux split-window -h -p 50
     vim
 }
