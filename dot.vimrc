@@ -30,7 +30,6 @@ filetype plugin indent on
 
 NeoBundleCheck
 
-
 " basic settings
 syntax on
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
@@ -51,35 +50,29 @@ set t_Co=256
 set tabstop=4
 set undolevels=700
 
-
 " keymap
 let mapleader = ','
-inoremap " ""<LEFT>
-inoremap ' ''<LEFT>
-inoremap ( ()<LEFT>
-inoremap < <><LEFT>
-inoremap [ []<LEFT>
-inoremap jh <Esc>
-inoremap nu <Esc>u
-inoremap { {}<LEFT>
-nnoremap <leader>b <C-b>
+"inoremap " ""<LEFT>
+"inoremap ' ''<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap < <><LEFT>
+"inoremap [ []<LEFT>
+"inoremap { {}<left>
+"inoremap jh <Esc>
 nnoremap <leader>ht :HardTimeToggle<CR>
-nnoremap <leader>q :q<CR>
-nnoremap <leader>w :w<CR>
-nnoremap nA A <Esc>
-nnoremap nO O<Esc>
-nnoremap na a <Esc>
-nnoremap no o<Esc>
-nnoremap q! :q!<CR>
+nnoremap ae a <esc>
+nnoremap oe o <esc>
+nnoremap ae a <esc>
+nnoremap oe o<Esc>
 nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
-nnoremap w! :w!<CR>
+"nnoremap w! :w!<CR>
 nnoremap wh <C-w>h
 nnoremap wj <C-w>h
 nnoremap wk <C-w>k
 nnoremap wl <C-w>l
-nnoremap wq :wq<CR>
-nnoremap wq! :wq!<CR>
+"nnoremap wq :wq<CR>
+"nnoremap wq! :wq!<CR>
 noremap <S-h>   ^
 noremap <S-l>   $
 noremap <S-s> :s/
@@ -87,8 +80,6 @@ noremap <leader>f :Files<CR>
 noremap <leader>fc :Files ~/Code<CR>
 noremap <leader>fd :Files ~/dotfiles<CR>
 noremap <leader>t :tab new<CR>
-noremap fj 5j
-noremap fk 5k
 noremap nt :NERDTreeToggle<CR>
 tnoremap <C-w>h <C-\><C-n><C-w>h
 tnoremap <C-w>j <C-\><C-n><C-w>j
@@ -96,7 +87,6 @@ tnoremap <C-w>k <C-\><C-n><C-w>k
 tnoremap <C-w>l <C-\><C-n><C-w>l
 vnoremap <leader>s :sort<CR>
 vnoremap jh <Esc>
-
 
 " jedi-vim 
 let g:jedi#completions_command = "<C-j>"
@@ -106,25 +96,20 @@ let g:jedi#documentation_command = "<C-k>"
 
 autocmd FileType python setlocal completeopt-=preview
 
-
 " ctrlp
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
 
-
 " fzf
 set rtp+=/usr/local/opt/fzf
 
-
 " nerdtree
 let NERDTreeShowHidden=1
-
 
 " UtilSnips
 let g:UltiSnipsExpandTrigger="<tab>"
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
 
 " vim-submode
 call submode#enter_with('win-resize', 'n', '', 'w>', '<C-w>>')
@@ -146,7 +131,6 @@ call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>'
 call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
 
-
 " SQLUtilities 
 vmap <silent>sf        <Plug>SQLU_Formatter<CR>
 nmap <silent>scl       <Plug>SQLU_CreateColumnList<CR>
@@ -162,12 +146,10 @@ let g:sqlfmt_options = "-r -k upper"
 
 let g:sqlutil_non_line_break_keywords = ['insert']
 
-
 " local settings
 if filereadable(expand('~/.vimrc.local'))
   source ~/.vimrc.local
 endif
-
 
 "auto commands
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
@@ -177,14 +159,12 @@ autocmd FileType python setl tabstop=8 expandtab shiftwidth=4 softtabstop=4
 autocmd FileType python nmap <leader>c ]]zt 
 autocmd FileType python nmap <leader>C [[zt
 
-
 " cursor settings
 autocmd InsertEnter * set cul
 autocmd InsertLeave * set nocul
 hi CursorLine cterm=NONE ctermbg=black 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
-
 
 " vim-lsp settings 
 if executable('pyls')
