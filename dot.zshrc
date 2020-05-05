@@ -88,6 +88,7 @@ alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gs='git status'
+alias ide=ide()
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -99,3 +100,8 @@ export FZF_DEFAULT_OPTS="--height 70% --ansi --preview-window 'right:60%' --prev
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+ide() {
+    tmux split-window -v -p 20
+    vim
+}
