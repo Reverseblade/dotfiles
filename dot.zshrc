@@ -88,7 +88,6 @@ alias gd='git diff'
 alias gl='git log'
 alias gb='git branch'
 alias gs='git status'
-alias ide=ide()
 
 # fzf
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
