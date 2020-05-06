@@ -4,7 +4,6 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 
 NeoBundleFetch 'Shougo/neobundle.vim'
 
-NeoBundle 'Reverseblade/vim-line-control'
 NeoBundle 'SirVer/ultisnips'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'editorconfig/editorconfig-vim'
@@ -189,3 +188,12 @@ augroup lsp_install
     " call s:on_lsp_buffer_enabled only for languages that has the server registered.
     autocmd User lsp_buffer_enabled call s:on_lsp_buffer_enabled()
 augroup END
+
+" custom functions
+function! MoveLineUp()
+    normal! m1yykPm2`1dd`2 
+endfunction
+
+function! MoveLineDown()
+    normal! m1yyjpm2`1dd`2 
+endfunction
