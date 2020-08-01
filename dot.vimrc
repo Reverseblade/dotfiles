@@ -17,13 +17,17 @@ Plug 'sonph/onehalf', {'rtp': 'vim/'}
 Plug 'takac/vim-hardtime'
 Plug 'ujihisa/unite-colorscheme'
 Plug 'mattn/emmet-vim'
+Plug 'prabirshrestha/vim-lsp'
+Plug 'mattn/vim-lsp-settings'
+Plug 'prabirshrestha/asyncomplete.vim'
+Plug 'prabirshrestha/asyncomplete-lsp.vim'
 
 " Initialize plugin system
 call plug#end()
 
 filetype plugin indent on
 
-" basic settings
+" Basic Settings 
 syntax on
 hi LineNr term=standout term=reverse ctermfg=242 guibg=DarkGrey 
 
@@ -43,7 +47,7 @@ set t_Co=256
 set tabstop=4
 set undolevels=700
 
-" keymap
+" Key Mappings 
 let mapleader = ','
 inoremap jh <Esc>
 nnoremap <leader>ht :HardTimeToggle<CR>
@@ -56,6 +60,17 @@ noremap <leader>f :Files<CR>
 noremap nt :NERDTreeToggle<CR>
 vnoremap jh <Esc>
 
+" vim-lsp
+let g:lsp_signs_enabled = 1
+let g:lsp_diagnostics_enabled = 1
+let g:lsp_diagnostics_echo_cursor = 1
+let g:lsp_virtual_text_enabled = 1
+let g:lsp_signs_error = {'text': '✗'}
+let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_information = {'text': 'i'}
+let g:lsp_signs_hint = {'text': '?'}
+let g:lsp_signs_enabled = 1         " enable signs
+
 " ctrlp
 let g:ctrlp_show_hidden = 1
 let g:ctrlp_working_path_mode = 'ra'
@@ -66,7 +81,7 @@ set rtp+=/usr/local/opt/fzf
 " nerdtree
 let NERDTreeShowHidden=1
 
-"auto commands
+" auto commands
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " cursor settings
