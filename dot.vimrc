@@ -14,7 +14,7 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'editorconfig/editorconfig-vim'
 Plug 'itchyny/lightline.vim'
-Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'kana/vim-submode'
 Plug 'kien/ctrlp.vim'
@@ -97,6 +97,12 @@ autocmd InsertLeave * set nocul
 hi CursorLine cterm=NONE ctermbg=black 
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
+
+" Custome line control
+call submode#enter_with('line-move', 'n', '', '<C-l>j', ':call MoveLineDown()<CR>')
+call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>')
+call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
+call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
 
 " custom functions
 function! MoveLineUp()
