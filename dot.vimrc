@@ -84,6 +84,7 @@ let g:ctrlp_working_path_mode = 'ra'
 
 " fzf
 set rtp+=/usr/local/opt/fzf
+let g:fzf_layout = { 'down': '~50%' }
 
 " nerdtree
 let NERDTreeShowHidden=1
@@ -98,13 +99,13 @@ hi CursorLine cterm=NONE ctermbg=black
 let &t_SI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=1\x7\<Esc>\\"
 let &t_EI = "\<Esc>Ptmux;\<Esc>\<Esc>]50;CursorShape=0\x7\<Esc>\\"
 
-" Custome line control
-call submode#enter_with('line-move', 'n', '', '<C-l>j', ':call MoveLineDown()<CR>')
+" Custom line control
 call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>')
+call submode#enter_with('line-move', 'n', '', '<C-l>j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
 
-" custom functions
+" Custom functions
 function! MoveLineUp()
     normal! m1yykPm2`1dd`2 
 endfunction
