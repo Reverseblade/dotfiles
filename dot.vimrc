@@ -66,6 +66,7 @@ noremap <S-l>   $
 noremap <S-s> :s/
 noremap <leader>f :Files<CR>
 noremap nt :NERDTreeToggle<CR>
+nnoremap ,f :Files<CR>
 vnoremap jh <Esc>
 
 " vim-lsp
