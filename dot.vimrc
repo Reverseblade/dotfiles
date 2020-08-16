@@ -71,6 +71,12 @@ nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>d :LspDefinition<CR>
 vnoremap jh <Esc>
 
+" makes Ascii art font
+nmap <silent><leader>F :.!toilet -w 200<CR>
+
+" makes Ascii border
+nmap <silent><leader>1 :.!toilet -w 200 -f term -F border<CR>
+                            
 " vim-lsp
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_enabled = 1
