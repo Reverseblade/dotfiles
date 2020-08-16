@@ -65,8 +65,8 @@ noremap <S-h>   ^
 noremap <S-l>   $
 noremap <S-s> :s/
 noremap <leader>f :Files<CR>
-noremap nt :NERDTreeToggle<CR>
-nnoremap <leader>f :Files<CR>
+noremap <silent> nt :NERDTreeToggle<CR>
+nnoremap <silent><leader>f :Files<CR>
 nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>d :LspDefinition<CR>
 vnoremap jh <Esc>
