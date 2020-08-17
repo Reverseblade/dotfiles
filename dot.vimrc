@@ -29,6 +29,8 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-rails'
+Plug 'junegunn/goyo.vim'
+Plug 'junegunn/limelight.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -70,13 +72,14 @@ nnoremap <silent><leader>f :Files<CR>
 nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>d :LspDefinition<CR>
 vnoremap jh <Esc>
+nnoremap <leader>s :source ~/.vimrc<CR> 
 
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
 
 " makes Ascii border
 nmap <silent><leader>1 :.!toilet -w 200 -f term -F border<CR>
-                            
+
 " vim-lsp
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_enabled = 1
@@ -101,6 +104,18 @@ let NERDTreeShowHidden=1
 
 " auto commands
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" Goyo & Limelight
+let g:limelight_conceal_ctermfg = 'gray'
+let g:limelight_conceal_ctermfg = 240
+let g:limelight_conceal_guifg = 'DarkGray'
+let g:limelight_conceal_guifg = '#777777'
+let g:limelight_default_coefficient = 0.7
+let g:limelight_paragraph_span = 1
+let g:limelight_eop = '\ze\n^\s'
+let g:limelight_priority = -1
+autocmd! User GoyoEnter Limelight
+autocmd! User GoyoLeave Limelight!
 
 " cursor settings
 autocmd InsertEnter * set cul
