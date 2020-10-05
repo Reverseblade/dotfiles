@@ -29,6 +29,7 @@ Plug 'mattn/vim-lsp-settings'
 Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-rails'
+Plug 'editorconfig/editorconfig-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -63,7 +64,7 @@ nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
 noremap <S-h>   ^
 noremap <S-l>   $
-noremap <S-s> :s/
+noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
 noremap <silent> nt :NERDTreeToggle<CR>
 nnoremap <silent><leader>f :Files<CR>
