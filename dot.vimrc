@@ -88,6 +88,8 @@ let g:lsp_signs_warning = {'text': '‼'}
 let g:lsp_signs_information = {'text': 'i'}
 let g:lsp_signs_hint = {'text': '?'}
 let g:lsp_signs_enabled = 1         " enable signs
+let g:lsp_highlights_enabled = 0
+let g:lsp_textprop_enabled = 0
 
 " ctrlp
 let g:ctrlp_show_hidden = 1
