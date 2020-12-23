@@ -30,6 +30,7 @@ Plug 'prabirshrestha/asyncomplete.vim'
 Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-rails'
 Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-fugitive'
 
 " Initialize plugin system
 call plug#end()
