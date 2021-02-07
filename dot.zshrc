@@ -105,6 +105,7 @@ ide() {
     vim
 }
 
+# コマンド履歴を出して検索・絞り込み
 setopt hist_ignore_all_dups
 
 function peco_select_history() {
@@ -121,6 +122,7 @@ function peco_select_history() {
 zle -N peco_select_history
 bindkey '^r' peco_select_history
 
+# ghqレポジトリへの移動
 function peco-src () {
   local selected_dir=$(ghq list -p | peco --query "$LBUFFER")
   if [ -n "$selected_dir" ]; then
