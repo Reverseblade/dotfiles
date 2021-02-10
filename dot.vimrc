@@ -109,7 +109,7 @@ command! -nargs=0 Fq call fzf#run({
 let NERDTreeShowHidden=1
 
 " auto commands
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 " cursor settings
 autocmd InsertEnter * set cul
