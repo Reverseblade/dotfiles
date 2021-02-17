@@ -74,11 +74,6 @@ nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>d :LspDefinition<CR>
 vnoremap jh <Esc>
 
-" Home Automation
-noremap <leader>tl :call ToggleLight()<CR>
-noremap <leader>ttv :call ToggleTV()<CR>
-
-
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
 
@@ -139,13 +134,24 @@ function! MoveLineDown()
     normal! m1yyjpm2`1dd`2 
 endfunction
 
-" Home Automation
+" Home Device Control 
+command! ToggleLight :call ToggleLight()
+command! ToggleTV :call ToggleTV()
+
 function! ToggleLight()
   let res = webapi#http#post($TOGGLE_LIGHT)
-  echo res.status
+  if res.status == '200'
+      echo 'Success'
+  else
+      echo res.status
+  endif
 endfunction
 
 function! ToggleTV()
   let res = webapi#http#post($TOGGLE_TV)
-  echo res.status
+  if res.status == '200'
+      echo 'Success'
+  else
+      echo res.status
+  endif
 endfunction
