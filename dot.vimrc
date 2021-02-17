@@ -31,6 +31,7 @@ Plug 'prabirshrestha/asyncomplete-lsp.vim'
 Plug 'tpope/vim-rails'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
+Plug 'mattn/webapi-vim'
 
 " Initialize plugin system
 call plug#end()
@@ -60,7 +61,7 @@ set undolevels=700
 " Key Mappings 
 let mapleader = ','
 inoremap jh <Esc>
-nnoremap <leader>ht :HardTimeToggle<CR>
+"nnoremap <leader>ht :HardTimeToggle<CR>
 nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
 noremap <S-h>   ^
@@ -72,6 +73,11 @@ nnoremap <silent><leader>f :Files<CR>
 nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>d :LspDefinition<CR>
 vnoremap jh <Esc>
+
+" Home Automation
+noremap <leader>tl :call ToggleLight()<CR>
+noremap <leader>ttv :call ToggleTV()<CR>
+
 
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
@@ -131,4 +137,15 @@ endfunction
 
 function! MoveLineDown()
     normal! m1yyjpm2`1dd`2 
+endfunction
+
+" Home Automation
+function! ToggleLight()
+  let res = webapi#http#post($TOGGLE_LIGHT)
+  echo res.status
+endfunction
+
+function! ToggleTV()
+  let res = webapi#http#post($TOGGLE_TV)
+  echo res.status
 endfunction

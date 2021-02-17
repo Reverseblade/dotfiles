@@ -133,3 +133,6 @@ function peco-src () {
 }
 zle -N peco-src
 bindkey '^]' peco-src
+
+# ローカル参照
+source ~/zsh_local
