@@ -77,6 +77,7 @@ noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
 noremap <silent> nt :NERDTreeToggle<CR>
 vnoremap jh <Esc>
+nnoremap <leader>rg :Rg<CR>
 
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
