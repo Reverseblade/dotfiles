@@ -64,11 +64,12 @@ inoremap jh <Esc>
 "nnoremap <leader>ht :HardTimeToggle<CR>
 
 nnoremap <leader>d :LspDefinition<CR>
+nnoremap <leader>nt :tab new<CR>
 nnoremap <leader>r :LspReference<CR>
+nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
 nnoremap <leader>ttv :ToggleTV<CR>
 nnoremap <silent><leader>f :Files<CR>
-nnoremap <leader>nt :tab new<CR>
 nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
 noremap <S-h>   ^
@@ -77,7 +78,6 @@ noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
 noremap <silent> nt :NERDTreeToggle<CR>
 vnoremap jh <Esc>
-nnoremap <leader>rg :Rg<CR>
 
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
