@@ -32,6 +32,7 @@ Plug 'tpope/vim-rails'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
+Plug 'thinca/vim-quickrun'
 
 " Initialize plugin system
 call plug#end()
@@ -60,12 +61,11 @@ set undolevels=700
 
 " Key Mappings 
 let mapleader = ','
-inoremap jh <Esc>
+"nnoremap <leader>d :LspDefinition<CR>
 "nnoremap <leader>ht :HardTimeToggle<CR>
-
-nnoremap <leader>d :LspDefinition<CR>
+"nnoremap <leader>r :LspReference<CR>
+inoremap jh <Esc>
 nnoremap <leader>nt :tab new<CR>
-nnoremap <leader>r :LspReference<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
 nnoremap <leader>ttv :ToggleTV<CR>
@@ -76,6 +76,7 @@ noremap <S-h>   ^
 noremap <S-l>   $
 noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
+noremap <leader>r :QuickRun<CR>
 noremap <silent> nt :NERDTreeToggle<CR>
 vnoremap jh <Esc>
 
