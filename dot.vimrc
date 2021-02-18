@@ -107,6 +107,9 @@ let g:ctrlp_working_path_mode = 'ra'
 set rtp+=/usr/local/opt/fzf
 let g:fzf_layout = { 'down': '~50%' }
 
+" vim-quickrun
+let g:quickrun_config={'*': {'split': ''}}
+
 command! -nargs=0 Fq call fzf#run({
 \ 'source': 'ghq list --full-path',
 \ 'sink': 'cd'
