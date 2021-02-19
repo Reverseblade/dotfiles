@@ -58,6 +58,8 @@ set splitbelow
 set t_Co=256
 set tabstop=4
 set undolevels=700
+set wildmenu
+set wildmode=full
 
 " Key Mappings 
 let mapleader = ','
