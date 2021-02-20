@@ -1,7 +1,7 @@
 #!/bin/bash
 
-ln -sf ~/dotfiles/config.fish ~/.config/fish 
-ln -sf ~/dotfiles/dot.tmux.conf ~/.tmux.conf
-ln -sf ~/dotfiles/dot.vimrc ~/.vimrc
-ln -sf ~/dotfiles/dot.zshrc ~/.zshrc
-ln -sf ~/dotfiles/peco/config.json ~/.config/peco/config.json
+ln -sf $PWD/config.fish ~/.config/fish 
+ln -sf $PWD/dot.tmux.conf ~/.tmux.conf
+ln -sf $PWD/dot.vimrc ~/.vimrc
+ln -sf $PWD/dot.zshrc ~/.zshrc
+ln -sf $PWD/peco/config.json ~/.config/peco/config.json
