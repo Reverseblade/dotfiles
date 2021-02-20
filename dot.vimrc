@@ -33,6 +33,7 @@ Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
 Plug 'thinca/vim-quickrun'
+Plug 'preservim/tagbar'
 
 " Initialize plugin system
 call plug#end()
@@ -60,6 +61,8 @@ set tabstop=4
 set undolevels=700
 set wildmenu
 set wildmode=full
+set fileformats=unix,dos,mac
+set fileencodings=utf-8,sjis
 
 " Key Mappings 
 let mapleader = ','
