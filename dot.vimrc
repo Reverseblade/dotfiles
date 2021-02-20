@@ -34,6 +34,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'mattn/webapi-vim'
 Plug 'thinca/vim-quickrun'
 Plug 'preservim/tagbar'
+Plug 'jsfaint/gen_tags.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -66,14 +67,14 @@ set fileencodings=utf-8,sjis
 
 " Key Mappings 
 let mapleader = ','
-"nnoremap <leader>d :LspDefinition<CR>
 "nnoremap <leader>ht :HardTimeToggle<CR>
-"nnoremap <leader>r :LspReference<CR>
 inoremap jh <Esc>
+nnoremap <leader>bt :bo term<CR>
+nnoremap <leader>d :LspDefinition<CR>
 nnoremap <leader>nt :tab new<CR>
 nnoremap <leader>rg :Rg<CR>
 nnoremap <leader>sv :source ~/.vimrc<CR>
-nnoremap <leader>ttv :ToggleTV<CR>
+nnoremap <leader>tv :ToggleTV<CR>
 nnoremap <silent><leader>f :Files<CR>
 nnoremap sh :split<CR>
 nnoremap sv :vsplit<CR>
@@ -83,7 +84,9 @@ noremap <S-s> :%s/
 noremap <leader>f :Files<CR>
 noremap <leader>r :QuickRun<CR>
 noremap <silent> nt :NERDTreeToggle<CR>
+tnoremap <leader>jh <C-w><S-n><CR>
 vnoremap jh <Esc>
+
 
 " makes Ascii art font
 nmap <silent><leader>F :.!toilet -w 200<CR>
@@ -138,6 +141,29 @@ call submode#enter_with('line-move', 'n', '', '<C-l>k', ':call MoveLineUp()<CR>'
 call submode#enter_with('line-move', 'n', '', '<C-l>j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'j', ':call MoveLineDown()<CR>')
 call submode#map('line-move', 'n', '', 'k', ':call MoveLineUp()<CR>')
+call submode#leave_with('line-move', 'n', '', '<CR>')
+
+" For the ease of resizing windows
+call submode#enter_with('resize-win', 'n', '', '<C-w>-', ':resize -2<CR>')
+call submode#enter_with('resize-win', 'n', '', '<C-w>+', ':resize +2<CR>')
+call submode#enter_with('resize-win', 'n', '', '<C-w>>', ':vertical resize +2<CR>')
+call submode#enter_with('resize-win', 'n', '', '<C-w><', ':vertical resize -2<CR>')
+call submode#map('resize-win', 'n', '', '+', ':resize +2<CR>')
+call submode#map('resize-win', 'n', '', '-', ':resize -2<CR>')
+call submode#map('resize-win', 'n', '', '>', ':vertical resize +2<CR>')
+call submode#map('resize-win', 'n', '', '<', ':vertical resize -2<CR>')
+call submode#leave_with('resize-win', 'n', '', '<CR>')
+
+call submode#enter_with('resize-win', 't', '', '<C-w>-', '<C-w><S-n>:resize -2<CR>')
+call submode#enter_with('resize-win', 't', '', '<C-w>+', '<C-w><S-n>:resize +2<CR>')
+call submode#enter_with('resize-win', 't', '', '<C-w>>', '<C-w><S-n>:vertical resize +2<CR>')
+call submode#enter_with('resize-win', 't', '', '<C-w><', '<C-w><S-n>:vertical resize -2<CR>')
+call submode#map('resize-win', 't', '', '+', ':resize +2<CR>')
+call submode#map('resize-win', 't', '', '-', ':resize -2<CR>')
+call submode#map('resize-win', 't', '', '>', ':vertical resize +2<CR>')
+call submode#map('resize-win', 't', '', '<', ':vertical resize -2<CR>')
+call submode#leave_with('resize-win', 't', '', '<CR>')
+
 
 " Custom functions
 function! MoveLineUp()
