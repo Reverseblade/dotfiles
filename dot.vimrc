@@ -35,6 +35,7 @@ Plug 'mattn/webapi-vim'
 Plug 'thinca/vim-quickrun'
 Plug 'preservim/tagbar'
 Plug 'jsfaint/gen_tags.vim'
+Plug 'mattn/vim-goimports'
 
 " Initialize plugin system
 call plug#end()
@@ -117,6 +118,9 @@ let g:fzf_layout = { 'down': '~50%' }
 
 " vim-quickrun
 let g:quickrun_config={'*': {'split': ''}}
+
+" vim-goimports
+let g:goimports = 0
 
 command! -nargs=0 Fq call fzf#run({
 \ 'source': 'ghq list --full-path',
