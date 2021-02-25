@@ -136,3 +136,11 @@ bindkey '^]' peco-src
 
 # ローカル参照
 source ~/zsh_local
+
+# goenv
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+export GOBIN="$GOPATH/bin"
