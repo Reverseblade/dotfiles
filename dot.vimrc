@@ -177,25 +177,3 @@ endfunction
 function! MoveLineDown()
     normal! m1yyjpm2`1dd`2 
 endfunction
-
-" Home Device Control 
-command! ToggleLight :call ToggleLight()
-command! ToggleTV :call ToggleTV()
-
-function! ToggleLight()
-  let res = webapi#http#post($TOGGLE_LIGHT)
-  if res.status == '200'
-      echo 'Success'
-  else
-      echo res.status
-  endif
-endfunction
-
-function! ToggleTV()
-  let res = webapi#http#post($TOGGLE_TV)
-  if res.status == '200'
-      echo 'Success'
-  else
-      echo res.status
-  endif
-endfunction
